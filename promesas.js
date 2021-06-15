@@ -49,6 +49,12 @@ const getSalario = (id) => {
 //  .then((salario) => console.log(salario))
 //  .catch((err) => console.log(err));
 
-getEmpleado(id).then((empleado) => {
-  getSalario(id).then(salario);
-});
+getEmpleado(id)
+  .then((empleado) => {
+    getSalario(id)
+      .then((salario) => {
+        console.log("El empleado:", empleado, "tiene un salario de: ", salario);
+      })
+      .catch((err) => console.log(err));
+  })
+  .catch((err) => console.log(err));
